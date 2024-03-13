@@ -1,0 +1,105 @@
+* {
+  font-family: "REN_STIM";
+  font-size: 25px; /* Tamaño de fuente para los controles de entrada */
+}
+body {
+  height: 100%;
+}
+
+html {
+  background-image: url(https://images4.alphacoders.com/214/214594.jpg);
+  background-size: cover; /* Cambiado de 'cover' a 'contain' */
+  background-position: center; /* Ajusta esto para centrar la imagen donde desees */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  display: grid;
+  place-items: center; /* Centra el contenido tanto horizontal como verticalmente */
+}
+
+/* Estilos para el formulario dentro de la tarjeta */
+.myform {
+  display: grid; /* Uso de CSS Grid para organizar los elementos del formulario */
+  grid-template-columns: [labels] auto [controls] 1fr; /* Definición de las columnas para etiquetas y controles */
+  grid-auto-flow: row; /* Los elementos del formulario se disponen en filas */
+  gap: 0.8em; /* Espacio entre cada elemento del formulario */
+}
+
+.myform > label {
+  grid-column: labels; /* Ubicación de las etiquetas en su columna designada */
+  color: #b7b5a8; /* Color del texto para las etiquetas */
+  text-transform: uppercase;
+  align-self: center;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0.45); /* Color de fondo para el botón */
+  color: #d8d7d2; /* Color de texto para el botón */
+  border-radius: 10px; /* Bordes redondeados para el botón */
+  text-transform: uppercase;
+}
+
+button:hover {
+  cursor: pointer; /* Cambia el cursor a puntero cuando se pasa sobre el botón */
+  background-color: rgba(
+    255,
+    0,
+    0,
+    0.6
+  ); /* Color de fondo para el botón al pasar el mouse */
+  color: rgba(
+    0,
+    0,
+    255,
+    0.6
+  ); /* Color de texto para el botón al pasar el mouse */
+}
+
+.myform > input,
+.myform > button {
+  grid-column: controls; /* Ubicación de los controles de entrada y botón en su columna */
+  padding: 10px; /* Padding para los controles de entrada */
+  border: none; /* Elimina el borde por defecto */
+}
+
+input[type="text"],
+input[type="number"] {
+  background-color: rgba(0, 0, 0, 0.2); /* Fondo para los campos de texto */
+  color: lime; /* Color de texto para los campos de texto */
+  border-bottom: 1px solid #2efec8; /* Borde inferior para indicar el campo activo */
+}
+
+input::placeholder {
+  color: #b4d75d; /* Color del texto del placeholder */
+}
+
+/* Estilos para la única tarjeta que contiene el formulario */
+.card {
+  background-color: rgba(0, 0, 0, 0.2); /* 50% de transparencia */
+  padding: 1.5em; /* Padding alrededor del contenido de la tarjeta */
+  border-radius: 25px; /* Bordes redondeados para la tarjeta */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para la tarjeta */
+  width: fit-content; /* Ajusta el ancho de la tarjeta al contenido */
+  margin-top: 6rem;
+}
+
+.toast {
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #202124;
+  color: #ffc300;
+  padding: 15px 20px;
+  border-radius: 5px;
+  z-index: 1000;
+  display: none;
+
+  font-family: "THRASHER PERSONAL USE";
+}
+
+.toast.show {
+  display: block;
+}
