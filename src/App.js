@@ -50,7 +50,7 @@ function App() {
           className="myform"
           onSubmit={(e) => {
             e.preventDefault(); // Evita el comportamiento por defecto del formulario
-            generarMensaje(); // Genera y muestra el mensaje de bienvenida y el toast
+            generarMensaje(mensaje); // Genera y muestra el mensaje de bienvenida y el toast
           }}
         >
           <label htmlFor="nombre">Nombre Completo</label>
